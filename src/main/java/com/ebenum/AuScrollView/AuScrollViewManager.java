@@ -7,7 +7,9 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-package com.ebenum.auscrollview;
+package com.ebenum.AuScrollView;
+
+import com.facebook.react.views.scroll.ReactScrollViewManager;
 
 /**
  * View manager for {@link AuScrollView} components.
@@ -15,7 +17,11 @@ package com.ebenum.auscrollview;
  * <p>Note that {@link AuScrollView} and {@link ReactHorizontalScrollView} are exposed to JS
  * as a single ScrollView component, configured via the {@code horizontal} boolean property.
  */
-@ReactModule(name = AuScrollViewManager.REACT_CLASS)
-public class AuScrollViewManager extends ReactScrollViewManager<AuScrollView> {
-
+public class AuScrollViewManager extends ReactScrollViewManager {
+  public static final String REACT_CLASS = "AuScrollView";
+  
+  @Override
+  public String getName() {
+      return REACT_CLASS;
+  }
 }

@@ -7,7 +7,12 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-package com.ebenum.auscrollview;
+package com.ebenum.AuScrollView;
+
+import javax.annotation.Nullable;
+
+import com.facebook.react.bridge.ReactContext;
+import com.facebook.react.views.scroll.ReactScrollView;
 
 /**
  * A simple subclass of ScrollView that doesn't dispatch measure and layout to its children and has
@@ -17,5 +22,13 @@ package com.ebenum.auscrollview;
  * use {@link ReactHorizontalScrollView}.
  */
 public class AuScrollView extends ReactScrollView {
+  private @Nullable FpsListener mFpsListener = null;
 
+  public AuScrollView(ReactContext context) {
+    this(context, null);
+  }
+
+  public AuScrollView(ReactContext context, @Nullable FpsListener fpsListener) {
+    super(context);
+  }
 }

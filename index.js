@@ -1,13 +1,35 @@
 'use strict';
 import { PropTypes } from 'react';
-import { NativeModules, requireNativeComponent, ScrollView } from 'react-native';
+import { NativeModules, requireNativeComponent, ScrollView, Platform } from 'react-native';
 
-var iface = {
-  name: 'AuScrollView',
-  propTypes: {
-    ...ScrollView.propTypes // include the default scrollview properties
-  },
+class AuScrollView extends ScrollView {
+  constructor(props) {
+    super(props);
+  }
+}
+
+let nativeOnlyProps,
+  AndroidScrollView,
+  AndroidHorizontalScrollView,
+  RCTScrollView,
+  RCTScrollContentView;
+  
+nativeOnlyProps = {
+  nativeOnly: {
+    sendMomentumEvents: true,
+  }
 };
-var ProgressBar = requireNativeComponent('AuScrollView', iface);
 
-export default AuScrollView;
+AndroidScrollView = requireNativeComponent(
+  'RCTScrollView',
+  (AuScrollView: ReactClass<any>),
+  nativeOnlyProps
+);
+
+AndroidHorizontalScrollView = requireNativeComponent(
+  'AndroidHorizontalScrollView',
+  (AuScrollView: ReactClass<any>),
+  nativeOnlyProps
+);
+
+module.exports = AuScrollView;
