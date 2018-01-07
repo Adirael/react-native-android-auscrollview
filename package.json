@@ -1,0 +1,25 @@
+{
+  "name": "react-native-android-auscrollview",
+  "version": "1.0.0",
+  "description": "React Native ScrollView component that includes snapToInterval functionallity for Android",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adirael/react-native-android-auscrollview.git"
+  },
+  "keywords": [
+    "react-component",
+    "react-native",
+    "android"
+  ],
+  "author": "Angel Alonso",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sejoker/react-native-android-auscrollview/issues"
+  },
+  "homepage": "https://github.com/adirael/react-native-android-auscrollview#readme",
+  "dependencies": {}
+}
